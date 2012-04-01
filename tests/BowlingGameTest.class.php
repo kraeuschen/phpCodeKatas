@@ -9,7 +9,7 @@ use phpCodeKatas\BowlingGame;
  *
  * Unittests for the Bowling Game Kata
  *
- * @author j.krause <jankrause08@googlemail.com>
+ * @author j.krause <info@kraeuschen.de>
  */
 class BowlingGameTest extends PHPUnit_Framework_TestCase
 {
@@ -33,8 +33,8 @@ class BowlingGameTest extends PHPUnit_Framework_TestCase
     /**
      * throws the bowl
      *
-     * @param $n
-     * @param $pins
+     * @param int $n
+     * @param int $pins
      *
      * @return void
      */

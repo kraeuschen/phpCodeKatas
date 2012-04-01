@@ -9,7 +9,7 @@ use phpCodeKatas\WordWrap;
  *
  * Unittests for the Word Wrap Kata
  *
- * @author j.krause <jankrause08@googlemail.com>
+ * @author j.krause <info@kraeuschen.de>
  */
 class WordWrapTest extends PHPUnit_Framework_TestCase
 {

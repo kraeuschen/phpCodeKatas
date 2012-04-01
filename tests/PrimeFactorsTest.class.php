@@ -10,7 +10,7 @@ use \ArrayObject;
  *
  * Unittests of Prime Factors Kata
  *
- * @author j.krause <jankrause08@googlemail.com>
+ * @author j.krause <info@kraeuschen.de>
  */
 class PrimeFactorsTest extends PHPUnit_Framework_TestCase
 {

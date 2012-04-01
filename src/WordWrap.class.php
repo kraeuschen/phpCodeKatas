@@ -19,7 +19,7 @@ namespace phpCodeKatas;
  *
  * Like a word processor, break the line by replacing the last space in a line with a newline."
  *
- * @author j.krause <jankrause08@googlemail.com>
+ * @author j.krause <info@kraeuschen.de>
  *
  * @see http://thecleancoder.blogspot.de/2010/10/craftsman-62-dark-path.html
  * @see http://blog.code-cop.org/2011/08/word-wrap-kata-variants.html

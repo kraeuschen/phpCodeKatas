@@ -16,7 +16,7 @@ use \ArrayObject;
  * In number theory, the prime factors of a positive integer are the prime numbers that divide that integer exactly,
  * without leaving a remainder.
  *
- * @author j.krause <jankrause08@googlemail.com>
+ * @author j.krause <info@kraeuschen.de>
  *
  * @see http://butunclebob.com/ArticleS.UncleBob.ThePrimeFactorsKata
  */

@@ -13,7 +13,7 @@ use \SplFixedArray;
  *
  * Uncle Bobs Bownling Kata in PHP
  *
- * @author j.krause <jankrause08@googlemail.com>
+ * @author j.krause <info@kraeuschen.de>
  *
  * @see http://butunclebob.com/ArticleS.UncleBob.TheBowlingGameKata
  */
@@ -45,7 +45,7 @@ class BowlingGame {
     /**
      * player bowls
      *
-     * @var int $pins
+     * @param int $pins
      *
      * @return void
      */
