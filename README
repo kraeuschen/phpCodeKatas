@@ -1,0 +1,41 @@
+
+// +----------------------------------------------------------+
+// | phpCodeKatas                                             |
+// +----------------------------------------------------------+
+
+phpCodeKatas is an Collection of Katas written in PHP.
+
+There are a lot of excercises written in other programming languages,
+so i decided to rewrite them into PHP.
+
+Its an great training for TDD, learning new programming languages, how to write clean code,
+how to solve problems with returning algorithms ..
+
+
+
+What you Need:
+- (PHP 5 >= 5.3.0 and PHPUnit ( >= 3.6, but older versions should work to)
+
+
+
+How to play:
+- the exercises you will find in the @see document line
+  This URL will lead you to the exercise and examples written in different languages.
+  
+- build two classes, one plain and one for unittests
+- write and start write a unittest
+- add code to the plain class until the unittest works
+- write next unittest
+- change code in plain class until both unittests working
+- ... etc pp
+
+
+
+Which exercise should the be the first?
+- Uncle Bobs PrimeFactors: on his blog you can download an PPT File, which show slides how to practice TDD.
+
+Where to find Katas?
+- http://codingdojo.org/cgi-bin/wiki.pl?KataCatalogue
+- http://codekata.pragprog.com/2007/01/code_kata_backg.html#more
+- http://www.codersdojo.org/katas/list
+- http://google.com
