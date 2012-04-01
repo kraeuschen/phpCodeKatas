@@ -50,7 +50,7 @@ class RomanNumerals
         $roman = '';
         $int = (int) $int;
 
-        while ($int>0) {
+        while ($int > 0) {
             foreach (self::$_map as $n => $char) {
                 if ($int >= $n) {
                     $int -= $n;

@@ -1,7 +1,7 @@
 <?php
 
 // +----------------------------------------------------------+
-// | phpCodeKatas BowlingGame                                 |
+// | phpCodeKatas Bowling Game                                |
 // +----------------------------------------------------------+
 
 namespace phpCodeKatas;
@@ -31,7 +31,7 @@ class BowlingGame {
      *
      * @var SplFixedArray
      */
-	private $rolls = null;
+    private $rolls = null;
 
     /**
      * constructor
