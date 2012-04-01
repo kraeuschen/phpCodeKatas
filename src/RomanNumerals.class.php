@@ -50,10 +50,6 @@ class RomanNumerals
         $roman = '';
         $int = (int) $int;
 
-        if ($int <= 0) {
-            return $roman;
-        }
-
         while ($int>0) {
             foreach (self::$_map as $n => $char) {
                 if ($int >= $n) {
