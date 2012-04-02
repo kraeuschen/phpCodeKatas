@@ -1,6 +1,6 @@
 <?php
 
-require_once('../src//RomanNumerals.class.php');
+require_once('../src/RomanNumerals.class.php');
 
 use phpCodeKatas\RomanNumerals;
 
