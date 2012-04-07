@@ -37,13 +37,13 @@ namespace phpCodeKatas;
  */
 class StringCalculator
 {
-	/**
-	 * stores negative numbers
-	 * 
-	 * @var array $negativeNumbers
-	 */
+    /**
+     * stores negative numbers
+     * 
+     * @var array $negativeNumbers
+     */
     private $negativeNumbers = array();
-	
+
     /**
      * Add strings
      * 
@@ -66,7 +66,7 @@ class StringCalculator
 
         return $result;
     }
-    
+
     /**
      * Checks if an number is valid and cast it to int
      * 
@@ -98,7 +98,7 @@ class StringCalculator
                 sprintf('negatives not allowed: %s', implode(', ', $this->negativeNumbers)));
         }
     }
-    
+
     /**
      * Gets Delimiter and replaces content
      * 
