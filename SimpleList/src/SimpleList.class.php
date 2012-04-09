@@ -25,14 +25,6 @@ class SimpleList
     protected $firstNode = null;
 
     /**
-     * Holds the latest node to avoid while loop on adding an items
-     * makes the code more complex in other methods
-     * 
-     * @var SimpleListNodey
-     */
-    protected $lastNode = null;
-
-    /**
      * searches a node by string
      * 
      * @param string $search
@@ -69,13 +61,28 @@ class SimpleList
 
         if ($this->firstNode === null) {
             $this->firstNode = $node;
-            $this->lastNode = $this->firstNode;
         } else {
-            $this->lastNode->setNextNode($node);
-            $this->lastNode = $node;
+            $lastNode = $this->_getLastNode();
+            $lastNode->setNextNode($node);
         }
     }
 
+    /**
+     * returns last node in current chain
+     * 
+     * @return SimpleListNode
+     */
+    protected function _getLastNode()
+    {
+        $node = $this->firstNode;
+
+        while ($node->getNextNode() !== null) {
+            $node = $node->getNextNode();
+        }
+
+        return $node;
+    }
+    
     /**
      * Return all values as array
      * 
@@ -100,43 +107,55 @@ class SimpleList
      * 
      * @param SimpleListNode $node
      * 
-     * @todo this should be reworked
+     * @return void
+     */
+    public function delete(SimpleListNode $node)
+    {
+        if ($this->firstNode->getValue() == $node->getValue()) {
+            $this->_deleteFirstNode($node);
+        } else {
+            $this->_deleteRegularNode($node);
+        }
+    }
+
+    /**
+     * Deletes regular code
+     * 
+     * @param SimpleListNode $nodeToDelete
      * 
      * @return void
      */
-    public function delete(SimpleListNode $nodeToDelete)
+    private function _deleteRegularNode(SimpleListNode $nodeToDelete)
     {
         $node = $this->firstNode;
 
-        if ($node->getValue() == $nodeToDelete->getValue()) {
-            $this->firstNode = $node->getNextNode();
-
-            if ($this->firstNode == null) {
-                $this->lastNode  = null;
-            }
-            return;
-        }
-
-        while ($node !== null) {
+        while ($node->getNextNode() !== null) {
             $nextNode = $node->getNextNode();
 
-            if ($nextNode == null) {
-                break;
+            if ($nextNode->getValue() !== $nodeToDelete->getValue()) {
+                $node = $nextNode;
+                continue;
             }
 
-            // needed for our lastNode cache
-            if ($nextNode->getValue() == $this->lastNode->getValue()) {
-                $node->unsetNextNode();
-                $this->lastNode = $node;
-                break;
-            }
-
-            if ($nextNode->getValue() == $nodeToDelete->getValue()) {
+            if ($nextNode->getNextNode() !== null) {
                 $node->setNextNode($nextNode->getNextNode());
-                break;
+            } else {
+                $node->unsetNextNode();
             }
 
-            $node = $nextNode;
+            break;
         }
+    }
+    
+    /**
+     * Deletes first node
+     * 
+     * @param SimpleListNode $node
+     * 
+     * @retutn void
+     */
+    private function _deleteFirstNode(SimpleListNode $node)
+    {
+        $this->firstNode = $node->getNextNode();
     }
 }

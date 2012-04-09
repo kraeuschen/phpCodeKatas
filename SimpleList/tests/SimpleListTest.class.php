@@ -97,16 +97,16 @@ class SimpleListTest extends PHPUnit_Framework_TestCase
 
         $this->assertEquals(array("fred", "wilma", "betty", "barney"), $list->getValues());
 
-        $list->delete($list->find("wilma"));
-        $this->assertEquals(array("fred", "betty", "barney"), $list->getValues());
+        $list->delete($list->find("betty"));
+        $this->assertEquals(array("fred", "wilma", "barney"), $list->getValues());
 
         $list->delete($list->find("fred"));
-        $this->assertEquals(array("betty", "barney"), $list->getValues());
+        $this->assertEquals(array("wilma", "barney"), $list->getValues());
 
         $list->delete($list->find("barney"));
-        $this->assertEquals(array("betty"), $list->getValues());
+        $this->assertEquals(array("wilma"), $list->getValues());
 
-        $list->delete($list->find("betty"));
+        $list->delete($list->find("wilma"));
         $this->assertEquals(array(), $list->getValues());
     }
 }
