@@ -7,10 +7,7 @@
 namespace phpCodeKatas;
 
 /**
- * KarateChop
- *
- * "A binary chop (sometimes called the more prosaic binary search) finds the position of value in a
- *  sorted array of values."
+ * KarateChop.class.php
  *
  * @author j.krause <info@kraeuschen.de>
  *

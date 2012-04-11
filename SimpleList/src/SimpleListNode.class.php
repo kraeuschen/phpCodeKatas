@@ -7,7 +7,7 @@ namespace phpCodeKatas;
 // +----------------------------------------------------------+
 
 /**
- * A simple list node
+ * SimpleListNode.class.php
  *
  * @author j.krause <info@kraeuschen.de>
  */

@@ -11,8 +11,6 @@ use \SplFixedArray;
 /**
  * BowlingGame.class.php
  *
- * Uncle Bobs Bownling Kata in PHP
- *
  * @author j.krause <info@kraeuschen.de>
  *
  * @see http://butunclebob.com/ArticleS.UncleBob.TheBowlingGameKata

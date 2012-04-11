@@ -11,11 +11,6 @@ use \ArrayObject;
 /**
  * PrimeFactors.class.php
  *
- * Uncle Bobs Prime Factors Kata in PHP
- *
- * In number theory, the prime factors of a positive integer are the prime numbers that divide that integer exactly,
- * without leaving a remainder.
- *
  * @author j.krause <info@kraeuschen.de>
  *
  * @see http://butunclebob.com/ArticleS.UncleBob.ThePrimeFactorsKata

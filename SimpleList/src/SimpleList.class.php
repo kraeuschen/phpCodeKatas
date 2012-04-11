@@ -9,7 +9,7 @@ namespace phpCodeKatas;
 require_once('SimpleListNode.class.php');
 
 /**
- * A single linked list
+ * SimpleList.class.php
  *
  * @author j.krause <info@kraeuschen.de>
  *

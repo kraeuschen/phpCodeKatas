@@ -14,25 +14,21 @@ how to write clean code, how to solve problems with returning algorithms ...
 
 
 What you Need:
-- (PHP 5 >= 5.3.0 and PHPUnit ( >= 3.6, but older versions should work to)
+- (PHP 5 >= 5.3.0 and PHPUnit ( >= 3.6, but older versions should work too)
 
 
 
 How to play:
-- the exercises you will find in the @see document line
-  This URL will lead you to the exercise and examples,
-  which are written in other programming languages.
+- the excercises are described in the README files
   
-- build two classes, one plain and one for unittests
-- write and start write a unittest
-- add code to the plain class until the unittest works
+- you starte writing a unittest class with the first test in it
+- add code to the target main class until the unittest works
 - write next unittest
 - change code in plain class until both unittests working
 - ... etc pp
+- rework the main class, whenever you can (dry)
 
-
-
-Which exercise should the be the first?
+Which excercise should the be the first?
 - Uncle Bobs PrimeFactors: on his blog you can download an PPT File,
   which show slides how to practice TDD.
 
@@ -41,3 +37,4 @@ Where to find Katas?
 - http://codekata.pragprog.com/2007/01/code_kata_backg.html#more
 - http://www.codersdojo.org/katas/list
 - http://google.com
+- ...

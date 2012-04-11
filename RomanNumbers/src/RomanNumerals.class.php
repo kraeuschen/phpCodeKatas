@@ -7,16 +7,13 @@
 namespace phpCodeKatas;
 
 /**
- * RomanNumbers.class.php
+ * RomanNumerals.class.php
  * 
- * You should write a function to convert from normal numbers to Roman Numerals
- * using letters - I, V, X, L, C, D, M
- *
  * @author j.krause <info@kraeuschen.de>
  *
- * @see http://www.novaroma.org/via_romana/numbers.html
- * @see http://langrsoft.com/jeff/2011/09/tdd-kata-roman-number-converter/
  * @see http://codingdojo.org/cgi-bin/wiki.pl?KataRomanNumerals
+ * @see http://langrsoft.com/jeff/2011/09/tdd-kata-roman-number-converter/
+ * @see http://www.novaroma.org/via_romana/numbers.html
  */
 class RomanNumerals
 {
