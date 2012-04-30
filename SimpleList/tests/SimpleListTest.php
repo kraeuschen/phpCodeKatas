@@ -1,7 +1,5 @@
 <?php
 
-require_once('../src/SimpleList.class.php');
-
 use phpCodeKatas\SimpleList;
 
 /**

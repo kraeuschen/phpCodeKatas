@@ -1,7 +1,5 @@
 <?php
 
-require_once('../src/StringCalculator.class.php');
-
 use phpCodeKatas\StringCalculator;
 
 /**

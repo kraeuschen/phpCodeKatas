@@ -6,8 +6,6 @@
 
 namespace phpCodeKatas;
 
-require_once('SimpleListNode.class.php');
-
 /**
  * SimpleList.class.php
  *

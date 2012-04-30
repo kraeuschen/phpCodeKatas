@@ -1,11 +1,9 @@
 <?php
 
-require_once('../src//WordWrap.class.php');
-
 use phpCodeKatas\WordWrap;
 
 /**
- * WordWrapTest.class.php
+ * WordWrapTest
  *
  * Unittests for the Word Wrap Kata
  *

@@ -1,17 +1,15 @@
 <?php
 
-require_once('../src/RomanNumerals.class.php');
-
-use phpCodeKatas\RomanNumerals;
+use phpCodeKatas\RomanNumbers;
 
 /**
- * RomanNumeralsTest
+ * RomanNumbersTest
  *
  * Unittests for the Roman Numerals Kata
  *
  * @author j.krause <info@kraeuschen.de>
  */
-class RomanNumeralsTest extends PHPUnit_Framework_TestCase
+class RomanNumbersTest extends PHPUnit_Framework_TestCase
 {
     private $_dataProvider = array(array(0, ''),
                                    array(1, 'I'),
@@ -65,6 +63,6 @@ class RomanNumeralsTest extends PHPUnit_Framework_TestCase
      * @return void
      */
     public function testArabicToRomanTranslation($int, $roman){
-        $this->assertEquals($roman, RomanNumerals::convertToRoman($int));
+        $this->assertEquals($roman, RomanNumbers::convertToRoman($int));
     }
 }

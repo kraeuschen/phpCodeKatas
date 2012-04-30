@@ -1,11 +1,9 @@
 <?php
 
-require_once('../src/BerlinClock.class.php');
-
 use phpCodeKatas\BerlinClock;
 
 /**
- * BerlinClockTest.class.php
+ * BerlinClockTest
  *
  * Unittests for the BerlinClock Kata
  *

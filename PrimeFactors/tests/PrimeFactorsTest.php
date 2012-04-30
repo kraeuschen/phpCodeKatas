@@ -1,12 +1,10 @@
 <?php
 
-require_once('../src/PrimeFactors.class.php');
-
 use phpCodeKatas\PrimeFactors;
 use \ArrayObject;
 
 /**
- * PrimeFactorsTest.class.php
+ * PrimeFactorsTest
  *
  * Unittests of Prime Factors Kata
  *

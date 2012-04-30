@@ -1,11 +1,9 @@
 <?php
 
-require_once('../src/FizzBuzz.class.php');
-
 use phpCodeKatas\FizzBuzz;
 
 /**
- * FizzBuzzTest.class.php
+ * FizzBuzzTest
  *
  * Unittests for the Fizz Buzz Kata
  *

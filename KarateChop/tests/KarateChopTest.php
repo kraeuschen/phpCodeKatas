@@ -1,11 +1,9 @@
 <?php
 
-require_once('../src/KarateChop.class.php');
-
 use phpCodeKatas\KarateChop;
 
 /**
- * KarateChopTest.class.php
+ * KarateChopTest
  *
  * Unittests for the KarateChop Kata
  * 

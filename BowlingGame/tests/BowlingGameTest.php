@@ -1,7 +1,5 @@
 <?php
 
-require_once('../src/BowlingGame.class.php');
-
 use phpCodeKatas\BowlingGame;
 
 /**

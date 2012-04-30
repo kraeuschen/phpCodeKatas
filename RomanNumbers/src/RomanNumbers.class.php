@@ -15,7 +15,7 @@ namespace phpCodeKatas;
  * @see http://langrsoft.com/jeff/2011/09/tdd-kata-roman-number-converter/
  * @see http://www.novaroma.org/via_romana/numbers.html
  */
-class RomanNumerals
+class RomanNumbers
 {
     /**
      * Int to Char Mapper

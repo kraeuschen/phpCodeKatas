@@ -16,6 +16,11 @@ how to write clean code, how to solve problems with returning algorithms ...
 What you Need:
 - (PHP 5 >= 5.3.0 and PHPUnit ( >= 3.6, but older versions should work too)
 
+Please use the bootstrap for testing, e.g. 
+
+phpunit BowlingGame/
+or
+phpunit ./
 
 
 How to play:

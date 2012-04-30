@@ -1,7 +1,5 @@
 <?php
 
-require_once('../src/Tennis.class.php');
-
 use phpCodeKatas\Tennis;
 
 /**

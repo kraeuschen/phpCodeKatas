@@ -1,7 +1,5 @@
 <?php
 
-require_once('../src/SimpleListNode.class.php');
-
 use phpCodeKatas\SimpleListNode;
 
 /**
@@ -9,7 +7,7 @@ use phpCodeKatas\SimpleListNode;
  *
  * @author j.krause <info@kraeuschen.de>
  */
-class SimpleListTest extends PHPUnit_Framework_TestCase
+class SimpleListNodeTest extends PHPUnit_Framework_TestCase
 {
     /**
      * @return void

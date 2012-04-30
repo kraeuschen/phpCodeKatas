@@ -1,11 +1,9 @@
 <?php
 
-require_once('../src/OrderedJobs.class.php');
-
 use phpCodeKatas\OrderedJobs;
 
 /**
- * OrderedJobsTest.class.php
+ * OrderedJobsTest
  *
  * Unittests of OrderJobs Kata
  *

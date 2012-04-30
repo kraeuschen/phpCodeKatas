@@ -1,11 +1,9 @@
 <?php
 
-require_once('../src/NumberToLCD.class.php');
-
 use phpCodeKatas\NumberToLCD;
 
 /**
- * NumberToLCD.class.php
+ * NumberToLCD
  *
  * @author j.krause <info@kraeuschen.de>
  */
