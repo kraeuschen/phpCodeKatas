@@ -26,7 +26,7 @@ class BerlinClock
     {
         $this->_validateTime($time);
 
-        list($hours, $minutes, $seconds) = split(':', $time);
+        list($hours, $minutes, $seconds) = explode(':', $time);
 
         $secondsLamp      = $this->_getSecondsLamp((int) $seconds); 
         $fiveHoursLamps   = $this->_getFiveHoursLamps((int) $hours);
