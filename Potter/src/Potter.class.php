@@ -57,7 +57,7 @@ class Potter {
      * 
      * @return float
      */
-    protected function _calculateRegularStackPrice($books)
+    protected function _calculateRegularStackPrice(array $books)
     {
         $bookStacks   = array();
         $currentBooks = array();
@@ -79,7 +79,7 @@ class Potter {
      * 
      * @return float
      */
-    protected function _calculateFourBookStackPrice($books)
+    protected function _calculateFourBookStackPrice(array $books)
     {
         $bookStacks   = array();
         $currentBooks = array();
@@ -109,7 +109,7 @@ class Potter {
      * 
      * @return float
      */
-    protected function _getStackPrice($bookStacks) {
+    protected function _getStackPrice(array &$bookStacks) {
         $price = 0;
 
         foreach($bookStacks as $books) {
