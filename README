@@ -3,6 +3,8 @@
 // | phpCodeKatas                                             |
 // +----------------------------------------------------------+
 
+"!https://secure.travis-ci.org/kraeuschen/phpCodeKatas!":http://travis-ci.org/kraeuschen/phpCodeKatas
+
 phpCodeKatas is an Collection of Katas written in PHP.
 
 There are a lot of excercises written in other programming languages,
