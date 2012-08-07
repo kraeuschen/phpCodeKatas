@@ -193,10 +193,12 @@ class PokerCards
 
         // check for multiple cards of one type
         foreach ($uniqueCards as $value => $amount) {
+            // same amount, but higher value
             if ($amount == $this->_highestAmount && $value > $this->_highestValue) {
                 $this->_highestAmount = $amount;
                 $this->_highestValue  = $value;
                 $this->_winner = $type;
+            // only higher amout
             } else if ($amount > $this->_highestAmount) {
                 $this->_winningType = 'pair';
                 $this->_highestAmount = $amount;
@@ -214,8 +216,6 @@ class PokerCards
     public function getResult()
     {
         $this->setHighestHand();
-
-        $winner =
 
         $cardName = $this->_cardValueNameMapper[$this->_highestValue];
 

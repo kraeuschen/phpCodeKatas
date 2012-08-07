@@ -101,22 +101,4 @@ class PokerCardsTest extends PHPUnit_Framework_TestCase
         $result = $pokerCards->getResult();
         $this->assertEquals($expected, $result);
     }
-
-    /**
-     * Test for black hand full house
-     *
-     * @return void
-     */
-    public function testBlackHandWinsWithFullHouse()
-    {
-        $this->markTestIncomplete();
-        $expected = 'Black wins - full house';
-
-        $pokerCards = new PokerCards();
-        $pokerCards->setBlackHand('2H', '4S', '4C', '2D', '4H');
-        $pokerCards->setWhiteHand('2S', '8S', 'AS', 'QS', '3S');
-
-        $result = $pokerCards->getResult();
-        $this->assertEquals($expected, $result);
-    }
 }
