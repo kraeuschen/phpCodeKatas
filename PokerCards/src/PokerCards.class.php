@@ -30,41 +30,33 @@ class PokerCards
     /**
      * sets black hand cards
      *
-     * @param string $cardOne
-     * @param string $cardTwo
-     * @param string $cardThree
-     * @param string $cardFour
-     * @param string $cardFive
+     * @param array $cards
      *
      * @return void
      */
-    public function setBlackHand($cardOne, $cardTwo, $cardThree, $cardFour, $cardFive)
+    public function setBlackHand(array $cards)
     {
-        $this->_blackHand = array('cardOne'   => $cardOne,
-                                  'cardTwo'   => $cardTwo,
-                                  'cardThree' => $cardThree,
-                                  'cardFour'  => $cardFour,
-                                  'cardFive'  => $cardFive);
+        if (count($cards) !== 5) {
+            throw new \InvalidArgumentException('invalid card amount for black hand');
+        }
+
+        $this->_blackHand = $cards;
     }
 
     /**
      * sets white hand cards
      *
-     * @param string $cardOne
-     * @param string $cardTwo
-     * @param string $cardThree
-     * @param string $cardFour
-     * @param string $cardFive
+     * @param array $cards
      *
      * @return void
      */
-    public function setWhiteHand($cardOne, $cardTwo, $cardThree, $cardFour, $cardFive)
+    public function setWhiteHand(array $cards)
     {
-        $this->_whiteHand = array('cardOne'   => $cardOne,
-                                  'cardTwo'   => $cardTwo,
-                                  'cardThree' => $cardThree,
-                                  'cardFour'  => $cardFour,
-                                  'cardFive'  => $cardFive);
+        if (count($cards) !== 5) {
+            throw new \InvalidArgumentException('invalid card amount for white hand');
+        }
+
+        $this->_whiteHand = $cards;
     }
 
     /**

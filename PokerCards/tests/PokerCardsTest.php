@@ -21,8 +21,8 @@ class PokerCardsTest extends PHPUnit_Framework_TestCase
         $expected = 'White wins - high card: Ace';
 
         $pokerCards = new PokerCards();
-        $pokerCards->setBlackHand('2H', '3D', '5S', '9C', 'KD');
-        $pokerCards->setWhiteHand('2C', '3H', '4S', '8C', 'AH');
+        $pokerCards->setBlackHand(array('2H', '3D', '5S', '9C', 'KD'));
+        $pokerCards->setWhiteHand(array('2C', '3H', '4S', '8C', 'AH'));
         $result = $pokerCards->getResult();
         $this->assertEquals($expected, $result);
     }
@@ -37,10 +37,36 @@ class PokerCardsTest extends PHPUnit_Framework_TestCase
         $expected = 'Black wins - high card: Ace';
 
         $pokerCards = new PokerCards();
-        $pokerCards->setWhiteHand('2H', '3D', '5S', '9C', 'KD');
-        $pokerCards->setBlackHand('2C', '3H', '4S', '8C', 'AH');
+        $pokerCards->setWhiteHand(array('2H', '3D', '5S', '9C', 'KD'));
+        $pokerCards->setBlackHand(array('2C', '3H', '4S', '8C', 'AH'));
         $result = $pokerCards->getResult();
         $this->assertEquals($expected, $result);
+    }
+
+    /**
+     * Test for invalid amount of cards
+     *
+     * @return void
+     */
+    public function testInvalidCardAmountOfWhiteHandException()
+    {
+        $this->setExpectedException('InvalidArgumentException', 'invalid card amount for white hand');
+
+        $pokerCards = new PokerCards();
+        $pokerCards->setWhiteHand(array('3D', '5S', '9C', 'KD'));
+    }
+
+    /**
+     * Test for invalid amount of cards
+     *
+     * @return void
+     */
+    public function testInvalidCardAmountOfBlackHandException()
+    {
+        $this->setExpectedException('InvalidArgumentException', 'invalid card amount for black hand');
+
+        $pokerCards = new PokerCards();
+        $pokerCards->setBlackHand(array('3D', '5S', '9C', 'KD', 'AH', 'JD'));
     }
 
     /**
