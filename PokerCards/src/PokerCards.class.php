@@ -13,6 +13,11 @@ namespace phpCodeKatas;
  */
 class PokerCards
 {
+    /**
+     * card name mapper
+     *
+     * @var array
+     */
     protected $_cardNameMapper = array(
         'T' => '10',
         'J' => 'Jack',
@@ -21,6 +26,11 @@ class PokerCards
         'A' => 'Ace',
     );
 
+    /**
+     * card value mapper
+     *
+     * @var array
+     */
     protected $_cardValueMapper = array(
         '2' => 2,
         '3' => 3,
@@ -38,9 +48,16 @@ class PokerCards
     );
 
     /**
+     * caches highest card
+     *
+     * @var string
+     */
+    protected $_highestCard = null;
+
+    /**
      * black hand
      *
-     * @array
+     * @var array
      */
     protected $_blackHand = array();
 
@@ -90,9 +107,9 @@ class PokerCards
      *
      * @return string
      */
-    public function getWinner($card)
+    public function getWinner()
     {
-        if (in_array($card, $this->_whiteHand)) {
+        if (in_array($this->_highestCard, $this->_whiteHand)) {
             return 'White';
         } else {
             return 'Black';
@@ -100,15 +117,14 @@ class PokerCards
     }
 
     /**
-     * return highest card of the deck
+     * gets the highest card of the deck
      *
-     * @return string
+     * @return void
      */
-    public function getHighestCard()
+    public function setHighestCard()
     {
         $highestValue = 0;
         $highestCardName = '';
-        $highestCard = '';
 
         // white hand
         foreach ($this->_whiteHand as $card) {
@@ -119,7 +135,7 @@ class PokerCards
             if ($currentValue > $highestValue) {
                 $highestCardName = $cardName;
                 $highestValue = $currentValue;
-                $highestCard = $card;
+                $this->_highestCard = $card;
             }
         }
 
@@ -132,11 +148,9 @@ class PokerCards
             if ($currentValue > $highestValue) {
                 $highestCardName = $cardName;
                 $highestValue = $currentValue;
-                $highestCard = $card;
+                $this->_highestCard = $card;
             }
         }
-
-        return $highestCard;
     }
 
     /**
@@ -146,10 +160,11 @@ class PokerCards
      */
     public function getResult()
     {
-        $card   = $this->getHighestCard();
-        $winner = $this->getWinner($card);
+        $this->setHighestCard();
 
-        list($cardName, $colour) = str_split($card);
+        $winner = $this->getWinner();
+
+        list($cardName, $colour) = str_split($this->_highestCard);
 
         return sprintf("%s wins - high card: %s",
                        $winner,
