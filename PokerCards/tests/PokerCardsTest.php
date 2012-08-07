@@ -118,4 +118,38 @@ class PokerCardsTest extends PHPUnit_Framework_TestCase
         $result = $pokerCards->getResult();
         $this->assertEquals($expected, $result);
     }
+
+    /**
+     * Test for white hand wins by three of a kind king
+     *
+     * @return void
+     */
+    public function testWhiteHandWinsWithThreeOfAKindKing()
+    {
+        $expected = 'White wins - Three of a Kind: King';
+
+        $pokerCards = new PokerCards();
+        $pokerCards->setBlackHand(array('2H', '3D', '5S', 'QC', 'QD'));
+        $pokerCards->setWhiteHand(array('2C', 'KH', '4S', 'KC', 'KS'));
+
+        $result = $pokerCards->getResult();
+        $this->assertEquals($expected, $result);
+    }
+
+    /**
+     * Test for white hand wins by four of kind king
+     *
+     * @return void
+     */
+    public function testBlackHandWinsWithFourOfAKindKing()
+    {
+        $expected = 'Black wins - Four of a Kind: King';
+
+        $pokerCards = new PokerCards();
+        $pokerCards->setWhiteHand(array('2H', '3D', '5S', 'QC', 'QD'));
+        $pokerCards->setBlackHand(array('KD', 'KH', '4S', 'KC', 'KS'));
+
+        $result = $pokerCards->getResult();
+        $this->assertEquals($expected, $result);
+    }
 }
