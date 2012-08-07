@@ -16,7 +16,7 @@ class PokerCardsTest extends PHPUnit_Framework_TestCase
      *
      * @return void
      */
-    public function testWhiteHandWinsWithHighcard()
+    public function testWhiteHandWinsWithHighcardAce()
     {
         $expected = 'White wins - high card: Ace';
 
@@ -32,13 +32,29 @@ class PokerCardsTest extends PHPUnit_Framework_TestCase
      *
      * @return void
      */
-    public function testBlackHandWinsWithHighcard()
+    public function testBlackHandWinsWithHighcardAce()
     {
         $expected = 'Black wins - high card: Ace';
 
         $pokerCards = new PokerCards();
         $pokerCards->setWhiteHand(array('2H', '3D', '5S', '9C', 'KD'));
         $pokerCards->setBlackHand(array('2C', '3H', '4S', '8C', 'AH'));
+        $result = $pokerCards->getResult();
+        $this->assertEquals($expected, $result);
+    }
+
+    /**
+     * Test for black hand wins with highcard
+     *
+     * @return void
+     */
+    public function testWhiteHandWinsWithHighcardKing()
+    {
+        $expected = 'White wins - high card: King';
+
+        $pokerCards = new PokerCards();
+        $pokerCards->setWhiteHand(array('2H', '3D', '5S', '9C', 'KD'));
+        $pokerCards->setBlackHand(array('2C', '3H', '4S', '8C', '6C'));
         $result = $pokerCards->getResult();
         $this->assertEquals($expected, $result);
     }
