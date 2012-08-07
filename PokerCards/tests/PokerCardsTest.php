@@ -12,7 +12,7 @@ use phpCodeKatas\PokerCards;
 class PokerCardsTest extends PHPUnit_Framework_TestCase
 {
     /**
-     * Test for white hand wins with highcard
+     * Test for white hand wins with highcard ace
      *
      * @return void
      */
@@ -28,7 +28,7 @@ class PokerCardsTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test for black hand wins with highcard
+     * Test for black hand wins with highcard ace
      *
      * @return void
      */
@@ -44,7 +44,7 @@ class PokerCardsTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test for black hand wins with highcard
+     * Test for white hand wins with highcard king
      *
      * @return void
      */
@@ -86,6 +86,23 @@ class PokerCardsTest extends PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test for white hand wins by pair queen
+     *
+     * @return void
+     */
+    public function testWhiteHandWinsWithPair()
+    {
+        $expected = 'Black wins - pair: Queen';
+
+        $pokerCards = new PokerCards();
+        $pokerCards->setBlackHand(array('2H', '3D', '5S', 'QC', 'QD'));
+        $pokerCards->setWhiteHand(array('2C', '3H', '4S', '8C', 'QS'));
+
+        $result = $pokerCards->getResult();
+        $this->assertEquals($expected, $result);
+    }
+
+    /**
      * Test for black hand full house
      *
      * @return void
@@ -98,6 +115,7 @@ class PokerCardsTest extends PHPUnit_Framework_TestCase
         $pokerCards = new PokerCards();
         $pokerCards->setBlackHand('2H', '4S', '4C', '2D', '4H');
         $pokerCards->setWhiteHand('2S', '8S', 'AS', 'QS', '3S');
+
         $result = $pokerCards->getResult();
         $this->assertEquals($expected, $result);
     }
