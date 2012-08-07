@@ -28,6 +28,22 @@ class PokerCardsTest extends PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test for black hand wins with highcard
+     *
+     * @return void
+     */
+    public function testBlackHandWinsWithHighcard()
+    {
+        $expected = 'Black wins - high card: Ace';
+
+        $pokerCards = new PokerCards();
+        $pokerCards->setWhiteHand('2H', '3D', '5S', '9C', 'KD');
+        $pokerCards->setBlackHand('2C', '3H', '4S', '8C', 'AH');
+        $result = $pokerCards->getResult();
+        $this->assertEquals($expected, $result);
+    }
+
+    /**
      * Test for black hand full house
      *
      * @return void
