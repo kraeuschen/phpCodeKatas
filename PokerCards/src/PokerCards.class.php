@@ -123,30 +123,32 @@ class PokerCards
      */
     public function setHighestCard()
     {
-        $highestValue = 0;
-        $highestCardName = '';
+        $this->_highestCard = null;
+        $this->_setHighestCardByHand('white');
+        $this->_setHighestCardByHand('black');
+    }
 
-        // white hand
-        foreach ($this->_whiteHand as $card) {
-            list($cardName, $colour) = str_split($card);
+    /**
+     * sets highest card by hand
+     *
+     * @return void
+     */
+    private function _setHighestCardByHand($type)
+    {
+        $cards = ($type == 'white') ? $this->_whiteHand : $this->_blackHand;
 
-            $currentValue = $this->_cardValueMapper[$cardName];
-
-            if ($currentValue > $highestValue) {
-                $highestCardName = $cardName;
-                $highestValue = $currentValue;
-                $this->_highestCard = $card;
-            }
+        if ($this->_highestCard == null) {
+            $this->_highestCard = current($cards);
         }
 
-        // black hand
-        foreach ($this->_blackHand as $card) {
-            list($cardName, $colour) = str_split($card);
+        foreach ($cards as $card) {
+            list($cardName, $color) = str_split($card);
+            list($highestCardName) = str_split($this->_highestCard);
 
             $currentValue = $this->_cardValueMapper[$cardName];
+            $highestValue = $this->_cardValueMapper[$highestCardName];
 
             if ($currentValue > $highestValue) {
-                $highestCardName = $cardName;
                 $highestValue = $currentValue;
                 $this->_highestCard = $card;
             }
