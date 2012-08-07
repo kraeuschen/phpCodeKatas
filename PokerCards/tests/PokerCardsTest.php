@@ -90,13 +90,30 @@ class PokerCardsTest extends PHPUnit_Framework_TestCase
      *
      * @return void
      */
-    public function testWhiteHandWinsWithPair()
+    public function testWhiteHandWinsWithPairQueen()
     {
         $expected = 'Black wins - pair: Queen';
 
         $pokerCards = new PokerCards();
         $pokerCards->setBlackHand(array('2H', '3D', '5S', 'QC', 'QD'));
         $pokerCards->setWhiteHand(array('2C', '3H', '4S', '8C', 'QS'));
+
+        $result = $pokerCards->getResult();
+        $this->assertEquals($expected, $result);
+    }
+
+    /**
+     * Test for white hand wins by pair queen
+     *
+     * @return void
+     */
+    public function testWhiteHandWinsWithPairKing()
+    {
+        $expected = 'White wins - pair: King';
+
+        $pokerCards = new PokerCards();
+        $pokerCards->setBlackHand(array('2H', '3D', '5S', 'QC', 'QD'));
+        $pokerCards->setWhiteHand(array('2C', '3H', '4S', 'KC', 'KS'));
 
         $result = $pokerCards->getResult();
         $this->assertEquals($expected, $result);

@@ -174,7 +174,6 @@ class PokerCards
     private function _setHighestHandByPlayer($type)
     {
         $cards = ($type == 'White') ? $this->_whiteHand : $this->_blackHand;
-        $this->_winningType = 'high card';
 
         $uniqueCards = array();
 
@@ -185,25 +184,40 @@ class PokerCards
             $currentValue = $this->_cardNameValueMapper[$cardName];
 
             if (!isset($uniqueCards[$currentValue])) {
-                $uniqueCards[$currentValue]['amount'] = 1;
+                $uniqueCards[$currentValue] = 1;
             } else {
-                $uniqueCards[$currentValue]['amount'] += 1;
+                $uniqueCards[$currentValue] += 1;
             }
         }
 
         // check for multiple cards of one type
         foreach ($uniqueCards as $value => $amount) {
+            switch ($amount) {
+                case 4:
+                    $winningType = 'Four of a Kind';
+                    break;
+                case 3:
+                    $winningType = 'Three of a Kind';
+                    break;
+                case 2:
+                    $winningType = 'pair';
+                    break;
+                default :
+                    $winningType = 'high card';
+            }
+
             // same amount, but higher value
             if ($amount == $this->_highestAmount && $value > $this->_highestValue) {
                 $this->_highestAmount = $amount;
                 $this->_highestValue  = $value;
                 $this->_winner = $type;
+                $this->_winningType = $winningType;
             // only higher amout
             } else if ($amount > $this->_highestAmount) {
-                $this->_winningType = 'pair';
                 $this->_highestAmount = $amount;
                 $this->_highestValue  = $value;
                 $this->_winner = $type;
+                $this->_winningType = $winningType;
             }
         }
     }
