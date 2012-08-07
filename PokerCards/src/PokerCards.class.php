@@ -51,6 +51,6 @@ class PokerCards
      */
     public function getResult()
     {
-        return 'Black wins - full house';
+        return 'White wins - high card: Ace';
     }
 }

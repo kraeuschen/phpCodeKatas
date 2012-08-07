@@ -12,16 +12,33 @@ use phpCodeKatas\PokerCards;
 class PokerCardsTest extends PHPUnit_Framework_TestCase
 {
     /**
+     * Test for white hand wins with highcard
+     *
+     * @return void
+     */
+    public function testWhiteHandWinsWithHighcard()
+    {
+        $expected = 'White wins - high card: Ace';
+
+        $pokerCards = new PokerCards();
+        $pokerCards->setBlackHand('2H', '3D', '5S', '9C', 'KD');
+        $pokerCards->setWhiteHand('2C', '3H', '4S', '8C', 'AH');
+        $result = $pokerCards->getResult();
+        $this->assertEquals($expected, $result);
+    }
+
+    /**
      * Test for black hand full house
      *
      * @return void
      */
-    public function testBlackHandFullHouse()
+    public function testBlackHandWinsWithFullHouse()
     {
+        $this->markTestIncomplete();
         $expected = 'Black wins - full house';
 
         $pokerCards = new PokerCards();
-        $pokerCards->setBlackHand('2H', '3D', '5S', '9C', 'KD');
+        $pokerCards->setBlackHand('2H', '4S', '4C', '2D', '4H');
         $pokerCards->setWhiteHand('2S', '8S', 'AS', 'QS', '3S');
         $result = $pokerCards->getResult();
         $this->assertEquals($expected, $result);
