@@ -48,27 +48,6 @@ class PokerCards
     );
 
     /**
-     * card name mapper
-     *
-     * @var array
-     */
-    protected $_cardValueNameMapper = array(
-        2 => '2',
-        3 => '3',
-        4 => '4',
-        5 => '5',
-        6 => '6',
-        7 => '7',
-        8 => '8',
-        9 => '9',
-        10 => 'T',
-        11 => 'J',
-        12 => 'Q',
-        13 => 'K',
-        14 => 'A',
-    );
-
-    /**
      * caches highest card
      *
      * @var int
@@ -115,6 +94,8 @@ class PokerCards
      *
      * @param array $cards
      *
+     * @throws InvalidArgumentException
+     *
      * @return void
      */
     public function setBlackHand(array $cards)
@@ -131,6 +112,8 @@ class PokerCards
      *
      * @param array $cards
      *
+     * @throws InvalidArgumentException
+     *
      * @return void
      */
     public function setWhiteHand(array $cards)
@@ -144,8 +127,6 @@ class PokerCards
 
     /**
      * returns winner as string
-     *
-     * @param string $card
      *
      * @return string
      */
@@ -161,13 +142,14 @@ class PokerCards
      */
     public function setHighestHand()
     {
-        $this->_highestCard = null;
         $this->_setHighestHandByPlayer('White');
         $this->_setHighestHandByPlayer('Black');
     }
 
     /**
      * sets highest hand by hand
+     *
+     * @param string $type
      *
      * @return void
      */
@@ -212,7 +194,7 @@ class PokerCards
                 $this->_highestValue  = $value;
                 $this->_winner = $type;
                 $this->_winningType = $winningType;
-            // only higher amout
+            // only higher amount
             } else if ($amount > $this->_highestAmount) {
                 $this->_highestAmount = $amount;
                 $this->_highestValue  = $value;
@@ -231,7 +213,8 @@ class PokerCards
     {
         $this->setHighestHand();
 
-        $cardName = $this->_cardValueNameMapper[$this->_highestValue];
+        $cardValueMapper = array_flip($this->_cardNameValueMapper);
+        $cardName = $cardValueMapper[$this->_highestValue];
 
         return sprintf("%s wins - %s: %s",
                        $this->getWinner(),
