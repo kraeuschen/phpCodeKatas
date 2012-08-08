@@ -9,6 +9,13 @@ namespace phpCodeKatas;
 /**
  * PokerCards.class.php
  *
+ * its incomplete, only highcard, pair, three and four of a kind
+ * are supported
+ *
+ * @todo save highest card and highest hand
+ * @todo two pairs, flush, straight, full house, straight flush
+ * @todo tie
+ *
  * @author j.krause <info@kraeuschen.de>
  */
 class PokerCards
@@ -159,7 +166,7 @@ class PokerCards
 
         $uniqueCards = array();
 
-        // map cards to other array
+        // map cards to other array with value as index
         foreach ($cards as $card) {
             list($cardName, $color) = str_split($card);
 
@@ -213,6 +220,7 @@ class PokerCards
     {
         $this->setHighestHand();
 
+        // @todo extract to method
         $cardValueMapper = array_flip($this->_cardNameValueMapper);
         $cardName = $cardValueMapper[$this->_highestValue];
 
